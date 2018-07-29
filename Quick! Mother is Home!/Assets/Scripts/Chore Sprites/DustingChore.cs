@@ -40,6 +40,7 @@ public class DustingChore : MonoBehaviour
 
     private void OnEnable()
     {
+        dustBallRemovedCount = 0;
         managerControllerScript.backgroundImage.GetComponent<SpriteRenderer>().sprite = managerControllerScript.livingRoomBackground;
         Debug.Log("Dusting Started");
         countDownObject.SetActive(true);

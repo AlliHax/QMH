@@ -290,10 +290,10 @@ public class ManagerController : MonoBehaviour {
             {
                 AssignChores();
             }
+            startDelayCountDown.SetActive(true);
             CheckChoreActivation();
             mainHud.SetActive(false);
-            disableChoresOnStart = true;
-            startDelayCountDown.SetActive(true);
+            //disableChoresOnStart = true;
             StartCoroutine("MomHomeMessage");
             EndOfDay();
         }
@@ -302,7 +302,7 @@ public class ManagerController : MonoBehaviour {
         if (delayCountDownStart == false)
         {
             startDelayCountDown.SetActive(false);
-            disableChoresOnStart = false;
+           // disableChoresOnStart = false;
         }
         ShowPlayerStats();
         UpdateChoreList();
@@ -511,6 +511,7 @@ public class ManagerController : MonoBehaviour {
         }
     }
 
+    //Assigns chores out of chore list based on how many slots available
     private void AssignChores()
     {
         notFirstTimeRun = true;
@@ -564,6 +565,7 @@ public class ManagerController : MonoBehaviour {
         }
     }
 
+    //Determines which chore to do next
     private void CheckChoreActivation()
     {
         if (activateChoreOne == true)
@@ -618,6 +620,7 @@ public class ManagerController : MonoBehaviour {
         }
     }
 
+    //Starts the chores once chore list is done showing
     private void StartChoreOrder()
     {
         if(beginChoreOrder == true)
@@ -655,6 +658,7 @@ public class ManagerController : MonoBehaviour {
         playerSavings = playerSavings + earnedAllowance + empireRevenue;
     }
 
+    //Caculates totals for the day
     void CalculateTotalEarnedForDay()
     {
         daysTotal = earnedAllowance + empireRevenue;
@@ -671,6 +675,7 @@ public class ManagerController : MonoBehaviour {
         }
     }
 
+    //Allows Chores to be added into chore list
     private void UpdateChoreList()
     {
         if (unlockDustingChore == true)
@@ -686,6 +691,7 @@ public class ManagerController : MonoBehaviour {
         }
     }
 
+    //Starts chores after displaying sticky note of chores to do that day.
     IEnumerator MomHomeMessage()
     {
         notepadChoreNumberOneText.text = choreNumberOne.name.ToString();
