@@ -775,7 +775,7 @@ public class ManagerController : MonoBehaviour {
             levelUpTitleObject.SetActive(true);
             levelUpTextObject.SetActive(true);
             levelUpTitleText.text = "Leveled Up!";
-            levelUpText.text = "You're more Responsible now!\n Responseability Level: " + responsibilityLevel + "!";
+            levelUpText.text = "You're more Responsible now!\n Responsibility Level: " + responsibilityLevel + "!";
             showLevelUpWindow = true;
             moneyEarned = ("You earned $" + earnedAllowance.ToString() + " Today from Chores!");
             moneyEarnedText.text = moneyEarned;
