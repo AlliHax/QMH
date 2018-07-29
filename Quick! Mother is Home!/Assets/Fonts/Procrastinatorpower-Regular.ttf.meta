@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f2538ecbf3d3e1c4bbd110b228eb4704
+timeCreated: 1516495892
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Procrastinatorpower
+  fontNames:
+  - Procrastinatorpower
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

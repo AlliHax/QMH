@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: ba291e91fff655546b9a2d60c823aa30
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  - choreNumberOne: {instanceID: 0}
+  - choreNumberTwo: {instanceID: 0}
+  - choreNumberThree: {instanceID: 0}
+  - backgroundImage: {instanceID: 0}
+  - kitchenBackground: {fileID: 21300000, guid: dc205093f8de6b74190327488d7e0b75,
+      type: 3}
+  - livingRoomBackground: {fileID: 21300000, guid: ab3d7b90961f7844b868e1f63f3ae92c,
+      type: 3}
+  - bathroomBackground: {instanceID: 0}
+  - backyardBackground: {instanceID: 0}
+  - startDelayCountDown: {instanceID: 0}
+  - stickyNote: {instanceID: 0}
+  - choreStickyNoteTitleObject: {instanceID: 0}
+  - notepadChoreNumberOneObject: {instanceID: 0}
+  - notepadChoreNumberTwoObject: {instanceID: 0}
+  - notepadChoreNumberThreeObject: {instanceID: 0}
+  - notepadChoreNumberOneText: {instanceID: 0}
+  - notepadChoreNumberTwoText: {instanceID: 0}
+  - notepadChoreNumberThreeText: {instanceID: 0}
+  - totalSavingsText: {instanceID: 0}
+  - totalSavingsTextObject: {instanceID: 0}
+  - responsiblityLevelText: {instanceID: 0}
+  - responsiblityLevelTextObject: {instanceID: 0}
+  - cameraLocation: {instanceID: 0}
+  - mainHud: {instanceID: 0}
+  - notEnoughMoneyTitleText: {instanceID: 0}
+  - notEnoughMoneyText: {instanceID: 0}
+  - notEnoughMoneyTitleObject: {instanceID: 0}
+  - notEnoughMoneyTextObject: {instanceID: 0}
+  - dayOverview: {instanceID: 0}
+  - moneyEarnedText: {instanceID: 0}
+  - overviewTextObject: {instanceID: 0}
+  - overViewTitleText: {instanceID: 0}
+  - overViewTitleGameObject: {instanceID: 0}
+  - levelUpWindow: {instanceID: 0}
+  - levelUpTitleObject: {instanceID: 0}
+  - levelUpTextObject: {instanceID: 0}
+  - levelUpTitleText: {instanceID: 0}
+  - levelUpText: {instanceID: 0}
+  - dishChoreButton: {instanceID: 0}
+  - sweepChoreButton: {instanceID: 0}
+  - sweepChoreScript: {instanceID: 0}
+  - garbageChoreButton: {instanceID: 0}
+  - diryDish: {instanceID: 0}
+  - trashWad: {instanceID: 0}
+  - bananaPeel: {instanceID: 0}
+  - whiteSock: {instanceID: 0}
+  - blueSock: {instanceID: 0}
+  - purpleSock: {instanceID: 0}
+  - dustBallOne: {instanceID: 0}
+  - dustBallTwo: {instanceID: 0}
+  - dustBallThree: {instanceID: 0}
+  - dustBallFour: {instanceID: 0}
+  - plug: {instanceID: 0}
+  - outlet: {instanceID: 0}
+  - plunger: {instanceID: 0}
+  - toilet: {instanceID: 0}
+  - mower: {instanceID: 0}
+  - unCutGrass: {instanceID: 0}
+  - cutGrass: {instanceID: 0}
+  - rock: {instanceID: 0}
+  - poo: {instanceID: 0}
+  - bag: {instanceID: 0}
+  - choreHud: {instanceID: 0}
+  - upgradeHud: {instanceID: 0}
+  - timeUpgradeHud: {instanceID: 0}
+  - notResponsibleWindow: {instanceID: 0}
+  - notEnoughMoneyWindow: {instanceID: 0}
+  - descriptionWindow: {instanceID: 0}
+  - descriptionTextObject: {instanceID: 0}
+  - descriptionTitleObject: {instanceID: 0}
+  - descriptionPriceTextObject: {instanceID: 0}
+  - funnyDescriptionTextObject: {instanceID: 0}
+  - notResponsibleEnoughTitleObject: {instanceID: 0}
+  - notResponsibleEnoughTextObject: {instanceID: 0}
+  - notResponsibleEnoughTitle: {instanceID: 0}
+  - notResponsibleEnoughText: {instanceID: 0}
+  - descriptionText: {instanceID: 0}
+  - descriptionTitle: {instanceID: 0}
+  - descriptionPriceText: {instanceID: 0}
+  - funnyDescriptionText: {instanceID: 0}
+  - livingroomArrow: {instanceID: 0}
+  - bathroomArrow: {instanceID: 0}
+  - backyardArrow: {instanceID: 0}
+  - broomPrefab: {instanceID: 0}
+  - garbagePrefab: {instanceID: 0}
+  - toiletPrefab: {instanceID: 0}
+  - washerPrefab: {instanceID: 0}
+  - dusterPrefab: {instanceID: 0}
+  - vacuumPrefab: {instanceID: 0}
+  - wastePrefab: {instanceID: 0}
+  - plantPrefab: {instanceID: 0}
+  - mowerPrefab: {instanceID: 0}
+  - backyardWeedsPrefab: {instanceID: 0}
+  - choreDescriptionWindow: {instanceID: 0}
+  - choreDescriptionTitleObject: {instanceID: 0}
+  - choreDescriptionTextObject: {instanceID: 0}
+  - choreDescriptionLevelRequirementObject: {instanceID: 0}
+  - choreDescriptionTitle: {instanceID: 0}
+  - choreDescriptionText: {instanceID: 0}
+  - choreDescriptionLevelRequirement: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
