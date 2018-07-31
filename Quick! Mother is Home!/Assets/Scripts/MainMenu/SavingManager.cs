@@ -31,7 +31,6 @@ public class SavingManager : MonoBehaviour {
         data.responsibilityLevel = managerControllerScript.responsibilityLevel;
         data.choreSlot3Unlocked = managerControllerScript.choreSlot3UpgradeUnlocked;
         data.noChoreSlotsUnlocked = managerControllerScript.noExtraSlotsUnlocked;
-        data.dustingChoreUnlocked = managerControllerScript.dustingChoreUnlocked;
         data.spongeUpgradeUnlocked = managerControllerScript.spongeActivated;
         data.broomUpgradeUnlocked = managerControllerScript.biggerBroomActivated;
         data.dustingUpgradeUnlocked = managerControllerScript.swiftyDusterActivated;
@@ -42,6 +41,9 @@ public class SavingManager : MonoBehaviour {
         data.lemonEmpireRevenue = managerControllerScript.lemonadeRevenue;
         data.lemonFlavorUpgradeCount = managerControllerScript.flavorLemonadeUpgradeCount;
         data.lemonFlavorUpgradePrice = managerControllerScript.flavorUpgradePrice;
+
+        data.dustingChoreUnlocked = managerControllerScript.dustingChoreUnlocked;
+        data.trashChoreUnlocked = managerControllerScript.trashChoreUnlocked;
 
         bf.Serialize(file, data);
         file.Close();
@@ -65,6 +67,7 @@ public class SavingManager : MonoBehaviour {
             managerControllerScript.noExtraSlotsUnlocked = data.noChoreSlotsUnlocked;
 
             managerControllerScript.dustingChoreUnlocked = data.dustingChoreUnlocked;
+            managerControllerScript.trashChoreUnlocked = data.trashChoreUnlocked;
 
             managerControllerScript.spongeActivated = data.spongeUpgradeUnlocked;
             managerControllerScript.biggerBroomActivated = data.broomUpgradeUnlocked;
@@ -108,6 +111,7 @@ class PlayerData
     public bool choreSlot3Unlocked;
 
     public bool dustingChoreUnlocked;
+    public bool trashChoreUnlocked;
 
     public bool spongeUpgradeUnlocked;
     public bool broomUpgradeUnlocked;

@@ -202,6 +202,7 @@ public class ManagerController : MonoBehaviour {
     public bool pooperScooperActivated;
     public bool ultraMowerActivated;
     public bool dustingChoreUnlocked;
+    public bool trashChoreUnlocked;
     //Time Upgrade Variables
     public bool extraLockActivated;
     public bool walkieTalkieActivated;
@@ -255,6 +256,11 @@ public class ManagerController : MonoBehaviour {
         {
             chores.Add(dustingChoreObject);
             Debug.Log("Dusting Chore Already Added");
+        }
+        if(trashChoreUnlocked == true)
+        {
+            chores.Add(garbageChoreObject);
+            Debug.Log("Garbage Chore Already Added");
         }
     }
 
@@ -691,6 +697,7 @@ public class ManagerController : MonoBehaviour {
         }
         if(unlockGarbageChore == true)
         {
+            trashChoreUnlocked = true;
             chores.Add(garbageChoreObject);
             unlockGarbageChore = false;
         }
