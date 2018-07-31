@@ -18,7 +18,7 @@ public class DusterButton : MonoBehaviour
         managerControllerScript.viewingDustingChoreDescription = true;
         managerControllerScript.choreDescriptionTitle.text = "Dusting";
         managerControllerScript.choreDescriptionText.text = "Dust is the enemy!\n Destroy all the dust!";
-        managerControllerScript.choreDescriptionLevelRequirement.text = "RL: 4 Required";
+        managerControllerScript.choreDescriptionLevelRequirement.text = "RL: 3 Required";
         managerControllerScript.popupWindowOpen = true;
 
         managerControllerScript.viewChoreDescriptionWindow = true;

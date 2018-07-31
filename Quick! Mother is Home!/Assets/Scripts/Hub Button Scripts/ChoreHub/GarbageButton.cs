@@ -21,7 +21,7 @@ public class GarbageButton : MonoBehaviour {
         managerControllerScript.viewingGarbageChoreDescription = true;
         managerControllerScript.choreDescriptionTitle.text = "Take out the Garbage";
         managerControllerScript.choreDescriptionText.text = "Collect all the garbage\n in the bin before the\n time runs out!";
-        managerControllerScript.choreDescriptionLevelRequirement.text = "RL: 3 Required";
+        managerControllerScript.choreDescriptionLevelRequirement.text = "RL: 4 Required";
         managerControllerScript.popupWindowOpen = true;
 
         managerControllerScript.viewChoreDescriptionWindow = true;
