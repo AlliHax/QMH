@@ -38,7 +38,6 @@ public class ManagerController : MonoBehaviour {
     //Display Chore List
     public bool showStickyNote;
     public GameObject stickyNote;
-    public GameObject choreStickyNoteTitleObject;
     public GameObject notepadChoreNumberOneObject;
     public GameObject notepadChoreNumberTwoObject;
     public GameObject notepadChoreNumberThreeObject;
@@ -176,11 +175,13 @@ public class ManagerController : MonoBehaviour {
     public Text empireDescriptionBodyText;
     public GameObject lemonadeEmpireTitleText;
     public GameObject lemonadeEmpireDescriptionText;
+    public GameObject lemonadeFlavorUpgradeCount;
+    public GameObject lemonadeFlavorUpgradeCostText;
+    public GameObject lemonadeRevenueHudText;
     //Variables for Empire Upgrades
     public bool hideEmpireUpgradeCounts;
     public int flavorLemonadeUpgradeCount;
     public int flavorUpgradePrice;
-    public GameObject lemonadeUpgradeCountTextObject;
     public Text flavorLemonadeUpgradeCountText;
     public GameObject flavorUpgradeCostObject;
     public Text flavorUpgradeCostText;
@@ -370,12 +371,16 @@ public class ManagerController : MonoBehaviour {
                 if (hideEmpireUpgradeCounts == true)
                 {
                     lemonadeTotalPerDayObjectForHud.SetActive(false);
-                    lemonadeUpgradeCountTextObject.SetActive(false);
+                    lemonadeRevenueHudText.SetActive(false);
+                    lemonadeFlavorUpgradeCount.SetActive(false);
+                    lemonadeFlavorUpgradeCostText.SetActive(false);
                 }
                 else if (hideEmpireUpgradeCounts == false)
                 {
-                    lemonadeUpgradeCountTextObject.SetActive(true);
                     lemonadeTotalPerDayObjectForHud.SetActive(true);
+                    lemonadeRevenueHudText.SetActive(true);
+                    lemonadeFlavorUpgradeCount.SetActive(true);
+                    lemonadeFlavorUpgradeCostText.SetActive(true);
                 }
             }
             else if (lemonadePurchased == false)
@@ -388,10 +393,12 @@ public class ManagerController : MonoBehaviour {
         else if (showLemonadeHud == false)
         {
             lemonadeHud.SetActive(false);
-            lemonadeUpgradeCountTextObject.SetActive(false);
             lemonadeTotalPerDayObjectForHud.SetActive(false);
             lemonadeEmpireTitleText.SetActive(false);
             lemonadeEmpireDescriptionText.SetActive(false);
+            lemonadeRevenueHudText.SetActive(false);
+            lemonadeFlavorUpgradeCount.SetActive(false);
+            lemonadeFlavorUpgradeCostText.SetActive(false);
         }
         
         if (showEmpireUpgradeDescriptionWindow == true)
@@ -493,7 +500,6 @@ public class ManagerController : MonoBehaviour {
         if (showStickyNote == true)
         {
             stickyNote.SetActive(true);
-            choreStickyNoteTitleObject.SetActive(true);
             notepadChoreNumberOneObject.SetActive(true);
             notepadChoreNumberTwoObject.SetActive(true);
             if(choreSlot3UpgradeUnlocked == true)
@@ -504,7 +510,6 @@ public class ManagerController : MonoBehaviour {
         else if (showStickyNote == false)
         {
             stickyNote.SetActive(false);
-            choreStickyNoteTitleObject.SetActive(false);
             notepadChoreNumberOneObject.SetActive(false);
             notepadChoreNumberTwoObject.SetActive(false);
             notepadChoreNumberThreeObject.SetActive(false);
@@ -622,6 +627,7 @@ public class ManagerController : MonoBehaviour {
 
     //Starts the chores once chore list is done showing
     private void StartChoreOrder()
+
     {
         if(beginChoreOrder == true)
         {
@@ -629,7 +635,6 @@ public class ManagerController : MonoBehaviour {
             beginChoreOrder = false;
         }
     }
-
     // Determines whether the player's money and RL level should be displayed
     private void ShowPlayerStats()
     {
