@@ -193,6 +193,7 @@ public class ManagerController : MonoBehaviour {
     public Text flavorLemonadeUpgradeCountText;
     public GameObject flavorUpgradeCostObject;
     public Text flavorUpgradeCostText;
+    public int totalLemonadeStandUpgrades;
     //Gameobjects for Chores
     public GameObject dustingChoreObject;
     public GameObject garbageChoreObject;
@@ -676,6 +677,7 @@ public class ManagerController : MonoBehaviour {
     {
         //lemonadeRevenue = lemonadeRevenue + (flavorLemonadeUpgradeCount * 3);
         empireRevenue = lemonadeRevenue; //eventually add the other two in.
+        totalLemonadeStandUpgrades = flavorLemonadeUpgradeCount;
     }
 
     //Calculates Player's savings.

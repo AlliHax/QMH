@@ -41,9 +41,11 @@ public class SavingManager : MonoBehaviour {
         data.lemonEmpireRevenue = managerControllerScript.lemonadeRevenue;
         data.lemonFlavorUpgradeCount = managerControllerScript.flavorLemonadeUpgradeCount;
         data.lemonFlavorUpgradePrice = managerControllerScript.flavorUpgradePrice;
+        data.totalLemonStandUpgrades = managerControllerScript.totalLemonadeStandUpgrades;
 
         data.dustingChoreUnlocked = managerControllerScript.dustingChoreUnlocked;
         data.trashChoreUnlocked = managerControllerScript.trashChoreUnlocked;
+        
 
   
         bf.Serialize(file, data);
@@ -79,6 +81,7 @@ public class SavingManager : MonoBehaviour {
             managerControllerScript.lemonadeRevenue = data.lemonEmpireRevenue;
             managerControllerScript.flavorLemonadeUpgradeCount = data.lemonFlavorUpgradeCount;
             managerControllerScript.flavorUpgradePrice = data.lemonFlavorUpgradePrice;
+            managerControllerScript.totalLemonadeStandUpgrades = data.totalLemonStandUpgrades;
 
         }
         else
@@ -123,5 +126,6 @@ class PlayerData
     public int lemonEmpireRevenue;
     public int lemonFlavorUpgradeCount;
     public int lemonFlavorUpgradePrice;
+    public int totalLemonStandUpgrades;
 
 }

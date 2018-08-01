@@ -5,6 +5,10 @@ using UnityEngine;
 public class EmpireUpgradeBuyButtons : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public GameObject lemonadeStandObject;
+    public GameObject previewLemonadeStandObject;
+    public Sprite lemonadeSpriteStart;
+    public Sprite lemonadeSpriteUpdate1;
 
 
     private void Start()
@@ -13,6 +17,15 @@ public class EmpireUpgradeBuyButtons : MonoBehaviour {
         if (managerControllerScript.notFirstTimeRun == false)
         {
             managerControllerScript.flavorUpgradePrice = 50;
+        }
+    }
+
+    public void Update()
+    {
+        if (managerControllerScript.totalLemonadeStandUpgrades >= 5)
+        {
+            lemonadeStandObject.GetComponent<SpriteRenderer>().sprite = lemonadeSpriteUpdate1;
+            previewLemonadeStandObject.GetComponent<SpriteRenderer>().sprite = lemonadeSpriteUpdate1;
         }
     }
     // Update is called once per frame
