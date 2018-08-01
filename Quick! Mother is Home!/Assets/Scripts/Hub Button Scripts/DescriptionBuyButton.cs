@@ -45,10 +45,20 @@ public class DescriptionBuyButton : MonoBehaviour {
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
-
-        else if (managerControllerScript.viewingExtraLockUpgradeDescription == true)
+        else if (managerControllerScript.viewingDusterUpgradeDescription == true)
         {
-            if (managerControllerScript.extraLockActivated == true)
+            if (managerControllerScript.swiftyDusterActivated == true)
+            {
+                GetComponent<SpriteRenderer>().color = Color.grey;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+        else if (managerControllerScript.viewingChoreSlot3UpgradeDescription == true)
+        {
+            if (managerControllerScript.choreSlot3UpgradeUnlocked == true)
             {
                 GetComponent<SpriteRenderer>().color = Color.grey;
             }
@@ -151,7 +161,7 @@ public class DescriptionBuyButton : MonoBehaviour {
             {
                 if (managerControllerScript.playerSavings >= 150)
                 {
-
+                    GetComponent<SpriteRenderer>().color = Color.grey;
                     managerControllerScript.playerSavings = managerControllerScript.playerSavings - 150;
                     managerControllerScript.swiftyDusterActivated = true;
                     Debug.Log("Swifty Duster Added");

@@ -92,6 +92,8 @@ public class ManagerController : MonoBehaviour {
     public GameObject levelUpTextObject;
     public Text levelUpTitleText;
     public Text levelUpText;
+    public GameObject levelUnlockChoreTextObject;
+    public Text levelUnlockChoreText;
     public string levelUpTitleTextString;
     public string levelUpTextString;
     public int addedTime = 1;
@@ -468,12 +470,17 @@ public class ManagerController : MonoBehaviour {
             levelUpWindow.SetActive(true);
             levelUpTitleObject.SetActive(true);
             levelUpTextObject.SetActive(true);
+            if(leveledUp == true)
+            {
+                levelUnlockChoreTextObject.SetActive(true);
+            }
         }
         else if (showLevelUpWindow == false)
         {
             levelUpWindow.SetActive(false);
             levelUpTitleObject.SetActive(false);
             levelUpTextObject.SetActive(false);
+            levelUnlockChoreTextObject.SetActive(false);
         }
         if (showDescriptionWindow == true)
         {
@@ -796,10 +803,13 @@ public class ManagerController : MonoBehaviour {
             if (responsibilityLevel == 3)
             {
                 unlockDustingChore = true;
+                levelUnlockChoreText.text = ("Dusting Chore Unlocked!");
             }
             if (responsibilityLevel == 4)
             {
-                unlockGarbageChore = true;
+                levelUnlockChoreText.text = ("Take Out Garbage\n Chore Unlocked!");
+               unlockGarbageChore = true;
+
             }
         }
         else

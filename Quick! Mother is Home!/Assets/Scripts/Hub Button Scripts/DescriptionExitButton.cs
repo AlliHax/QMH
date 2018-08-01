@@ -15,6 +15,7 @@ public class DescriptionExitButton : MonoBehaviour {
         managerControllerScript.showDescriptionWindow = false;
         managerControllerScript.viewingSpongeUpgradeDescription = false;
         managerControllerScript.viewingBroomUpgradeDescription = false;
+        managerControllerScript.viewingDusterUpgradeDescription = false;
         managerControllerScript.viewingGarbageUpgradeDescription = false;
         managerControllerScript.funnyDescriptionTextObject.SetActive(false);
         managerControllerScript.popupWindowOpen = false;
