@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResetGameButton : MonoBehaviour {
+public class xButtonForConfirm : MonoBehaviour {
     public GameObject slider;
     public GameObject optionsTitle;
     public GameObject musicVolumeTitle;
     public GameObject checkTitle;
     public GameObject checkExplaination;
     public GameObject checkButton;
-    public GameObject xConfirmButton;
+    public GameObject normConfirmButton;
 
     private void OnMouseDown()
     {
-        slider.SetActive(false);
-        optionsTitle.SetActive(false);
-        musicVolumeTitle.SetActive(false);
-        checkExplaination.SetActive(true);
-        checkTitle.SetActive(true);
-        checkButton.SetActive(true);
-        xConfirmButton.SetActive(true);
+        slider.SetActive(true);
+        optionsTitle.SetActive(true);
+        musicVolumeTitle.SetActive(true);
+        checkExplaination.SetActive(false);
+        checkTitle.SetActive(false);
+        checkButton.SetActive(false);
+        normConfirmButton.SetActive(true);
         gameObject.SetActive(false);
     }
 }
