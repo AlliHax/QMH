@@ -6,9 +6,9 @@ using UnityEngine;
 public class SoundController : MonoBehaviour {
     public static SoundController instance = null;
     public GameObject menuMusicPlayer;
-    private float musicVolume = 1f;
+    public float musicVolume = 1f;
     public Slider volumeSlider;
-    public float lastSetVolume;
+    public float lastSetVolume = 1;
 
     void Awake()
     {
@@ -26,13 +26,13 @@ public class SoundController : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        musicVolume = lastSetVolume;
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
         menuMusicPlayer.GetComponent<AudioSource>().volume = musicVolume;
-	}
+    }
 
     public void SetVolume(float volume){
         Debug.Log(volume);

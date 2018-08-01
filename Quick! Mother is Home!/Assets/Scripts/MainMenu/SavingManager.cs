@@ -45,6 +45,7 @@ public class SavingManager : MonoBehaviour {
         data.dustingChoreUnlocked = managerControllerScript.dustingChoreUnlocked;
         data.trashChoreUnlocked = managerControllerScript.trashChoreUnlocked;
 
+  
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Game Saved!");

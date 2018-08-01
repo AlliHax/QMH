@@ -4,8 +4,14 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class ManagerController : MonoBehaviour {
+    private static ManagerController instance;
+
     public GameObject savingManager;
     public SavingManager savingManagerScript;
+
+    public GameObject soundManager;
+    public SoundController soundManagerScript;
+
     public bool notFirstTimeRun;
     //Variables for Player
     public GameObject player;
@@ -252,6 +258,7 @@ public class ManagerController : MonoBehaviour {
     public bool disableChoresOnStart;
     public void Awake()
     {
+        soundManager = GameObject.Find("SoundManager");
         savingManagerScript = savingManager.GetComponent<SavingManager>();
         savingManagerScript.Load();
         if(dustingChoreUnlocked == true)
@@ -265,6 +272,7 @@ public class ManagerController : MonoBehaviour {
             Debug.Log("Garbage Chore Already Added");
         }
     }
+    
 
     void Start()
     {
