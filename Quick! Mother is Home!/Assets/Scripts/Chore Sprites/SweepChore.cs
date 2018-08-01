@@ -14,6 +14,13 @@ public class SweepChore : MonoBehaviour {
     public SweepMiniGame sweepMiniGameScript;
     public Collider2D sweepButtonCollider;
     public int sweepMiniGameScore;
+
+    public GameObject dustPan;
+    public Sprite dustPanSprite0;
+    public Sprite dustPanSprite1;
+    public Sprite dustPanSprite2;
+    public Sprite dustPanSprite3;
+
     public GameObject countDownObject;
 
     private void Start()
@@ -34,8 +41,10 @@ public class SweepChore : MonoBehaviour {
         {
             choreTime -= Time.deltaTime;
             CheckForTimeStopped();
+            Debug.Log(sweepMiniGameScript.sweepSwipe);
         }
 
+        UpdateDustPan();
     }
 
     private void OnEnable()
@@ -54,6 +63,7 @@ public class SweepChore : MonoBehaviour {
             EndSweepMiniGame();
         }
     }
+
     private void CheckForScore()
     {
         if(managerControllerScript.biggerBroomActivated == false)
@@ -67,11 +77,29 @@ public class SweepChore : MonoBehaviour {
         managerControllerScript.earnedAllowance = managerControllerScript.earnedAllowance + sweepMiniGameScore;
         managerControllerScript.rLevelExp = managerControllerScript.rLevelExp + (sweepMiniGameScore * .2f);
     }
+    
+    private void UpdateDustPan()
+    {
+        if (sweepMiniGameScript.sweepSwipe >= 3)
+        {
+            dustPan.GetComponent<SpriteRenderer>().sprite = dustPanSprite1;
+        }
+        if (sweepMiniGameScript.sweepSwipe >= 8)
+        {
+            dustPan.GetComponent<SpriteRenderer>().sprite = dustPanSprite2;
+        }
+        if (sweepMiniGameScript.sweepSwipe >= 12)
+        {
+            dustPan.GetComponent<SpriteRenderer>().sprite = dustPanSprite3;
+        }
+    }
    
     public void EndSweepMiniGame()
     {
         CheckForScore();
+        dustPan.GetComponent<SpriteRenderer>().sprite = dustPanSprite0;
         miniGameBroom.SetActive(false);
+        dustPan.SetActive(false);
         timeStopped = true;
         managerControllerScript.choresCompleted = managerControllerScript.choresCompleted + 1;
         managerControllerScript.choreBusy = false;
@@ -139,6 +167,7 @@ public class SweepChore : MonoBehaviour {
     {
         disableButton = true;
     }
+
     void CheckForDisable()
     {
         if (disableButton == true)
@@ -169,6 +198,7 @@ public class SweepChore : MonoBehaviour {
         managerControllerScript.choreBusy = true;
         timeStopped = false;
         miniGameBroom.SetActive(true);
+        dustPan.SetActive(true);
     }
 
 }

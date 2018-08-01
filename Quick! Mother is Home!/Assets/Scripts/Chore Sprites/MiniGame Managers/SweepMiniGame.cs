@@ -70,7 +70,7 @@ public class SweepMiniGame : MonoBehaviour {
             sweepSwipe = sweepSwipe + 1;
             target1Triggered = false;
             target2Triggered = false;
-            Debug.Log(sweepSwipe);
+            
         }
     }
 }
