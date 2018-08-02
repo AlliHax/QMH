@@ -11,6 +11,7 @@ public class garbageMiniGame : MonoBehaviour {
     public float yMin = -4f;
     public float yMax = -4f;
     public int wadCount;
+    public bool participatedInChore;
     // Use this for initialization
     void Start () {
         managerControllerScript = manager.GetComponent<ManagerController>();
@@ -37,6 +38,11 @@ public class garbageMiniGame : MonoBehaviour {
         {
             wadCount = wadCount + 1;
             Destroy(coll.gameObject);
+            if (participatedInChore == false)
+            {
+                managerControllerScript.participatedInChores = managerControllerScript.participatedInChores + 1;
+                participatedInChore = true;
+            }
         }
     }
 }

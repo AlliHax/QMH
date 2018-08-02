@@ -5,6 +5,8 @@ using UnityEngine;
 public class SweepMiniGame : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public GameObject sweepChoreObject;
+    public SweepChore sweepChoreScript;
     public int sweepSwipe;
     public Transform startPosition;
 
@@ -22,6 +24,7 @@ public class SweepMiniGame : MonoBehaviour {
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        sweepChoreScript = sweepChoreObject.GetComponent<SweepChore>();
         sweepSwipe = 0;
         soundSource.clip = sweepSound;
     }

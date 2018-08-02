@@ -18,6 +18,8 @@ public class DustingChore : MonoBehaviour
     public bool timeStopped;
     public int dustBallRemovedCount;
 
+    public bool participatedInChore;
+
     public GameObject countDownObject;
 
 
@@ -88,6 +90,7 @@ public class DustingChore : MonoBehaviour
     private void StopDustingMiniGame()
     {
         timeStopped = true;
+        participatedInChore = false;
         choreTime = baseChoreTime;
         dusterLimitBox.SetActive(false);
         duster.SetActive(false);

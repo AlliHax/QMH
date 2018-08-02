@@ -21,6 +21,8 @@ public class SweepChore : MonoBehaviour {
     public Sprite dustPanSprite2;
     public Sprite dustPanSprite3;
 
+    public bool participatedInChore;
+
     public GameObject countDownObject;
 
     private void Start()
@@ -41,7 +43,14 @@ public class SweepChore : MonoBehaviour {
         {
             choreTime -= Time.deltaTime;
             CheckForTimeStopped();
-            Debug.Log(sweepMiniGameScript.sweepSwipe);
+            if (sweepMiniGameScript.sweepSwipe > 1)
+            {
+                if (participatedInChore == false)
+                {
+                    managerControllerScript.participatedInChores = managerControllerScript.participatedInChores + 1;
+                    participatedInChore = true;
+                }
+            }
         }
 
         UpdateDustPan();
@@ -97,6 +106,7 @@ public class SweepChore : MonoBehaviour {
     public void EndSweepMiniGame()
     {
         CheckForScore();
+        participatedInChore = false;
         dustPan.GetComponent<SpriteRenderer>().sprite = dustPanSprite0;
         miniGameBroom.SetActive(false);
         dustPan.SetActive(false);

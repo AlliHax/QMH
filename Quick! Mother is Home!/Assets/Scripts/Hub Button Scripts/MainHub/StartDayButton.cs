@@ -40,5 +40,6 @@ public class StartDayButton : MonoBehaviour {
         managerControllerScript.bag.SetActive(true);
         managerControllerScript.choresNeedAssignment = true;
         managerControllerScript.beginChoreOrder = true;
+        managerControllerScript.participatedInChores = 0;
     }
 }

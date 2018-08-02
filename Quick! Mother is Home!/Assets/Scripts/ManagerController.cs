@@ -16,6 +16,12 @@ public class ManagerController : MonoBehaviour {
     public GameObject creditsScreen;
     public bool showCreditsScreen;
 
+    public bool grounded;
+    public int participatedInChores;
+    public GameObject groundedWindow;
+    public GameObject groundedTitleText;
+    public GameObject groundedDescriptionText;
+
     public bool notFirstTimeRun;
     //Variables for Player
     public GameObject player;
@@ -264,6 +270,7 @@ public class ManagerController : MonoBehaviour {
     public void Awake()
     {
         savingManagerScript = savingManager.GetComponent<SavingManager>();
+        savingManagerScript.Load();
         if(dustingChoreUnlocked == true)
         {
             chores.Add(dustingChoreObject);
@@ -323,6 +330,7 @@ public class ManagerController : MonoBehaviour {
             StartCoroutine("MomHomeMessage");
             EndOfDay();
         }
+        Grounded();
         CheckForTimeUpgrades();
         PlayerVisable();
         if (delayCountDownStart == false)
@@ -709,7 +717,10 @@ public class ManagerController : MonoBehaviour {
     //Calculates Player's savings.
     void CalculateSavings()
     {
-        playerSavings = playerSavings + earnedAllowance + empireRevenue;
+        if (grounded == false)
+        {
+            playerSavings = playerSavings + earnedAllowance + empireRevenue;
+        }
     }
 
     //Caculates totals for the day
@@ -828,7 +839,13 @@ public class ManagerController : MonoBehaviour {
     {
         CalculateSavings();
         CalculateTotalEarnedForDay();
-        if (leveledUp == true)
+        if (grounded == true)
+        {
+            groundedWindow.SetActive(true);
+            groundedTitleText.SetActive(true);
+            groundedDescriptionText.SetActive(true);
+        }
+        else if (leveledUp == true)
         {
             levelUpTitleObject.SetActive(true);
             levelUpTextObject.SetActive(true);
@@ -878,6 +895,18 @@ public class ManagerController : MonoBehaviour {
             sweepChoreButton.GetComponent<Collider2D>().enabled = false;
             dishChoreButton.GetComponent<Collider2D>().enabled = false;
             garbageChoreButton.GetComponent<Collider2D>().enabled = false;
+        }
+    }
+
+    private void Grounded()
+    {
+        if (participatedInChores >= totalChores)
+        {
+            grounded = false;
+        }
+        else if (participatedInChores < totalChores)
+        {
+            grounded = true;
         }
     }
 }

@@ -18,6 +18,8 @@ public class DishChore : MonoBehaviour
     public GameObject[] leftoverDishes;
     public GameObject countDownObject;
 
+    public bool participatedInChore;
+    
 
     private void Start()
     {
@@ -52,6 +54,7 @@ public class DishChore : MonoBehaviour
     {
         managerControllerScript.backgroundImage.GetComponent<SpriteRenderer>().sprite = managerControllerScript.kitchenBackground;
         Debug.Log("Dish Chore Started");
+        participatedInChore = false;
         DisableButton();
         countDownObject.SetActive(true);
         StartCoroutine(Countdown());

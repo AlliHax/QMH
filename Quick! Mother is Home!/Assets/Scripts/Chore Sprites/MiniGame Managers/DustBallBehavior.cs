@@ -8,6 +8,8 @@ public class DustBallBehavior : MonoBehaviour {
     public Sprite dustBall3;
     public Sprite dustBall4;
     private SpriteRenderer spriteRenderer;
+    public GameObject manager;
+    public ManagerController managerControllerScript;
 
     public DustingChore dustingChoreScript;
     public GameObject dustingChoreManager;
@@ -21,6 +23,11 @@ public class DustBallBehavior : MonoBehaviour {
     {
         if (other.gameObject.tag == "duster")
         {
+            if (dustingChoreScript.participatedInChore == false)
+            {
+                managerControllerScript.participatedInChores = managerControllerScript.participatedInChores + 1;
+                dustingChoreScript.participatedInChore = true;
+            }
             if (this.gameObject.tag == "dustBall1")
             {
                 spriteRenderer.sprite = dustBall2;

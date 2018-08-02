@@ -5,6 +5,8 @@ using UnityEngine;
 public class dirtyDishBehavior : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public GameObject dishChoreObject;
+    public DishChore dishChoreScript;
     public int dishCount = 1;
     public AudioClip dishSound;
     public AudioSource soundSource;
@@ -22,6 +24,11 @@ public class dirtyDishBehavior : MonoBehaviour {
         managerControllerScript.earnedAllowance = (managerControllerScript.earnedAllowance + dishCount);
         managerControllerScript.rLevelExp = managerControllerScript.rLevelExp + .2f;
         Debug.Log(managerControllerScript.earnedAllowance);
+        if (dishChoreScript.participatedInChore == false)
+        {
+            managerControllerScript.participatedInChores = managerControllerScript.participatedInChores + 1;
+            dishChoreScript.participatedInChore = true;
+        }
         Destroy(gameObject);
     }
 

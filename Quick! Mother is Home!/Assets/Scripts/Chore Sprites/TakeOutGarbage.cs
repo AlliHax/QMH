@@ -62,6 +62,7 @@ public class TakeOutGarbage : MonoBehaviour {
         managerControllerScript.choresCompleted = managerControllerScript.choresCompleted + 1;
         managerControllerScript.choreBusy = false;
         garbageMiniGameScript.wadCount = 0;
+        garbageMiniGameScript.participatedInChore = false;
         choreTime = baseChoreTime;
         NextChore();
     }
