@@ -12,6 +12,11 @@ public class ManagerController : MonoBehaviour {
     public GameObject soundManager;
     public SoundController soundManagerScript;
 
+    public GameObject startMenu;
+    public bool showStartMenu;
+    public GameObject creditsScreen;
+    public bool showCreditsScreen;
+
     public bool notFirstTimeRun;
     //Variables for Player
     public GameObject player;
@@ -259,7 +264,6 @@ public class ManagerController : MonoBehaviour {
     public bool disableChoresOnStart;
     public void Awake()
     {
-        soundManager = GameObject.Find("SoundManager");
         savingManagerScript = savingManager.GetComponent<SavingManager>();
         savingManagerScript.Load();
         if(dustingChoreUnlocked == true)
@@ -277,20 +281,25 @@ public class ManagerController : MonoBehaviour {
 
     void Start()
     {
-         if (notFirstTimeRun == false)
+        if (notFirstTimeRun == false)
         {
             noExtraSlotsUnlocked = true;
         }
-        showPlayerStats = true;
         //playerSavings = 0;
         earnedAllowance = 0;
         choresCompleted = 0;
-        showMainHud = true;
         //responsibilityLevel = 1;
         expNeeded = 2;
         rLevelExp = 0;
-        choreBusy = false;     
-        
+        choreBusy = false;
+        showStartMenu = true;
+
+    }
+    
+    public void BeginGamePlay()
+    {
+        showMainHud = true;
+        showPlayerStats = true;
     }
 
     // Update is called once per frame
@@ -329,6 +338,26 @@ public class ManagerController : MonoBehaviour {
     //Activiates/Deactivates all hubs and overviews.
     void HudController()
     {
+        if (showStartMenu == true)
+        {
+            startMenu.SetActive(true);
+            mainHud.SetActive(false);
+            creditsScreen.SetActive(false);
+        }
+        else if (showCreditsScreen == false)
+        {
+            creditsScreen.SetActive(false);
+        }
+        if (showCreditsScreen == true)
+        {
+            creditsScreen.SetActive(true);
+            mainHud.SetActive(false);
+            startMenu.SetActive(false);
+        }
+        else if (showStartMenu == false)
+        {
+            startMenu.SetActive(false);
+        }
         if (showMainHud == true)
         {
             mainHud.SetActive(true);
@@ -336,6 +365,7 @@ public class ManagerController : MonoBehaviour {
         else if (showMainHud == false)
         {
             mainHud.SetActive(false);
+            showPlayerStats = false;
         }
         if (showChoreUpgradeHud == true)
         {
@@ -440,7 +470,7 @@ public class ManagerController : MonoBehaviour {
         }
         else if (showOverview == false)
         {
-            showMainHud = true;
+           // showMainHud = true;
             dayOverview.SetActive(false);
             overviewTextObject.SetActive(false);
             passiveMoneyEarnedObject.SetActive(false);
@@ -479,10 +509,6 @@ public class ManagerController : MonoBehaviour {
             levelUpWindow.SetActive(true);
             levelUpTitleObject.SetActive(true);
             levelUpTextObject.SetActive(true);
-            if(leveledUp == true)
-            {
-                levelUnlockChoreTextObject.SetActive(true);
-            }
         }
         else if (showLevelUpWindow == false)
         {
@@ -725,7 +751,10 @@ public class ManagerController : MonoBehaviour {
     {
         notepadChoreNumberOneText.text = choreNumberOne.name.ToString();
         notepadChoreNumberTwoText.text = choreNumberTwo.name.ToString();
-        notepadChoreNumberThreeText.text = choreNumberThree.name.ToString();
+        if (choreSlot3UpgradeUnlocked == true)
+        {
+            notepadChoreNumberThreeText.text = choreNumberThree.name.ToString();
+        }
         Time.timeScale = 0;
         float pauseTime = Time.realtimeSinceStartup + 3f;
         
@@ -814,12 +843,13 @@ public class ManagerController : MonoBehaviour {
             {
                 unlockDustingChore = true;
                 levelUnlockChoreText.text = ("Dusting Chore Unlocked!");
+                levelUnlockChoreTextObject.SetActive(true);
             }
             if (responsibilityLevel == 4)
             {
                 levelUnlockChoreText.text = ("Take Out Garbage\n Chore Unlocked!");
                unlockGarbageChore = true;
-
+                levelUnlockChoreTextObject.SetActive(true);
             }
         }
         else
