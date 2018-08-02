@@ -343,6 +343,7 @@ public class ManagerController : MonoBehaviour {
             startMenu.SetActive(true);
             mainHud.SetActive(false);
             creditsScreen.SetActive(false);
+            showPlayerStats = false;
         }
         else if (showCreditsScreen == false)
         {
@@ -365,7 +366,7 @@ public class ManagerController : MonoBehaviour {
         else if (showMainHud == false)
         {
             mainHud.SetActive(false);
-            showPlayerStats = false;
+            
         }
         if (showChoreUpgradeHud == true)
         {

@@ -5,6 +5,12 @@ using UnityEngine;
 public class ConfirmResetButton : MonoBehaviour {
     public SavingManager savingManagerScript;
     public GameObject savingManager;
+    public GameObject optionsHud;
+    public GameObject checkTitle;
+    public GameObject checkExplain;
+    public GameObject StartButton;
+    public GameObject creditButton;
+    public GameObject optionsButton;
 
     // Use this for initialization
     void Start()
@@ -18,5 +24,14 @@ public class ConfirmResetButton : MonoBehaviour {
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
         savingManagerScript.Delete();
+        optionsHud.SetActive(false);
+        checkExplain.SetActive(false);
+        checkTitle.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        optionsButton.GetComponent<Collider2D>().enabled = true;
+        StartButton.GetComponent<Collider2D>().enabled = true;
+        creditButton.GetComponent<Collider2D>().enabled = true;
+        gameObject.SetActive(false);
+
     }
 }
