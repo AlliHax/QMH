@@ -4,8 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class ManagerController : MonoBehaviour {
-    private static ManagerController instance;
-
+ 
     public GameObject savingManager;
     public SavingManager savingManagerScript;
 
@@ -265,7 +264,6 @@ public class ManagerController : MonoBehaviour {
     public void Awake()
     {
         savingManagerScript = savingManager.GetComponent<SavingManager>();
-        savingManagerScript.Load();
         if(dustingChoreUnlocked == true)
         {
             chores.Add(dustingChoreObject);
@@ -298,6 +296,7 @@ public class ManagerController : MonoBehaviour {
     
     public void BeginGamePlay()
     {
+        //savingManagerScript.Load();
         showMainHud = true;
         showPlayerStats = true;
     }

@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayButton : MonoBehaviour {
-    public string sceneName;
     public GameObject manager;
     public ManagerController managerControllerScript;
     public GameObject savingManager;

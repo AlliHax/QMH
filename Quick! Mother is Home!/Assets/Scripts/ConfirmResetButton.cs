@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class ConfirmResetButton : MonoBehaviour {
@@ -22,8 +23,8 @@ public class ConfirmResetButton : MonoBehaviour {
     // Deletes all save data
     private void OnMouseDown()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
         savingManagerScript.Delete();
+        gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
         optionsHud.SetActive(false);
         checkExplain.SetActive(false);
         checkTitle.SetActive(false);
@@ -31,7 +32,10 @@ public class ConfirmResetButton : MonoBehaviour {
         optionsButton.GetComponent<Collider2D>().enabled = true;
         StartButton.GetComponent<Collider2D>().enabled = true;
         creditButton.GetComponent<Collider2D>().enabled = true;
+        SceneManager.LoadScene("GamePlay");
+        Debug.Log("Scene Reloaded");
         gameObject.SetActive(false);
+        
 
     }
 }

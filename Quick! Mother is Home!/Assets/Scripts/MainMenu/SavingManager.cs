@@ -57,6 +57,7 @@ public class SavingManager : MonoBehaviour {
     {
         if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
+            Debug.Log("Loading Player Data");
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
             PlayerData data = (PlayerData)bf.Deserialize(file);
