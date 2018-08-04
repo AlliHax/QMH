@@ -5,9 +5,12 @@ using UnityEngine;
 public class GarbageButton : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
     private void Start()
     {
+        soundEffectSource.clip = buttonPushedSound;
         managerControllerScript = manager.GetComponent<ManagerController>();
     }
 
@@ -18,6 +21,7 @@ public class GarbageButton : MonoBehaviour {
 
     void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.viewingGarbageChoreDescription = true;
         managerControllerScript.choreDescriptionTitle.text = "Take out the Garbage";
         managerControllerScript.choreDescriptionText.text = "Collect all the garbage\n in the bin before the\n time runs out!";

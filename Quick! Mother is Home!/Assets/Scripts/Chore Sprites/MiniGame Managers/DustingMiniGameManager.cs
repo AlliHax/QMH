@@ -11,7 +11,6 @@ public class DustingMiniGameManager : MonoBehaviour {
 
     void Start()
     {
-        dusterAudioSource.clip = brushingSound;
     }
 
     // Update is called once per frame
@@ -19,6 +18,7 @@ public class DustingMiniGameManager : MonoBehaviour {
     {
         if (!dusterAudioSource.isPlaying)
         {
+            dusterAudioSource.clip = brushingSound;
             dusterAudioSource.Play();
         }
         duster.SetActive(true);

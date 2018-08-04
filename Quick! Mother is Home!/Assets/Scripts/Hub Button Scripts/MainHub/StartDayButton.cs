@@ -6,13 +6,19 @@ public class StartDayButton : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
     public Transform cameraLocation;
+
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
+
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        soundEffectSource.clip = buttonPushedSound;
     }
 
     void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.savingManagerScript.Save();
         managerControllerScript.showStickyNote = true;
         managerControllerScript.delayCountDownStart = true;

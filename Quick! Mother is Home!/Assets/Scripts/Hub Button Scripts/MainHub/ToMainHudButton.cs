@@ -6,9 +6,12 @@ public class ToMainHudButton : MonoBehaviour {
 
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
     private void Start()
     {
+        soundEffectSource.clip = buttonPushedSound;
         managerControllerScript = manager.GetComponent<ManagerController>();
     }
 
@@ -19,6 +22,7 @@ public class ToMainHudButton : MonoBehaviour {
 
     void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.showEmpireHud = false;
         managerControllerScript.showChoreUpgradeHud = false;
         managerControllerScript.showToolUpgradeHud = false;

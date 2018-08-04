@@ -11,6 +11,8 @@ public class garbageMiniGame : MonoBehaviour {
     public float yMin = -4f;
     public float yMax = -4f;
     public int wadCount;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
     public bool participatedInChore;
     // Use this for initialization
     void Start () {
@@ -34,8 +36,13 @@ public class garbageMiniGame : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        
         if (coll.gameObject.tag == "TrashWad")
         {
+            soundEffectSource.clip = buttonPushedSound;
+            soundEffectSource.Play();
+            soundEffectSource.clip = buttonPushedSound;
+            soundEffectSource.Play();
             wadCount = wadCount + 1;
             Destroy(coll.gameObject);
             if (participatedInChore == false)

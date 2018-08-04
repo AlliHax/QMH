@@ -5,10 +5,13 @@ using UnityEngine;
 public class NewSponge : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        soundEffectSource.clip = buttonPushedSound;
     }
     private void Update()
     {
@@ -17,12 +20,13 @@ public class NewSponge : MonoBehaviour {
 
     void OnMouseDown()
     {
-            managerControllerScript.showDescriptionWindow = true;
-            managerControllerScript.viewingSpongeUpgradeDescription = true;
-            managerControllerScript.descriptionTitle.text = "Magic Sponge";
-            managerControllerScript.descriptionPriceText.text = "$40";
-            managerControllerScript.descriptionText.text = "This is the best sponge EVER!";
-            managerControllerScript.popupWindowOpen = true;
+        soundEffectSource.Play();
+        managerControllerScript.showDescriptionWindow = true;
+        managerControllerScript.viewingSpongeUpgradeDescription = true;
+        managerControllerScript.descriptionTitle.text = "Magic Sponge";
+        managerControllerScript.descriptionPriceText.text = "$40";
+        managerControllerScript.descriptionText.text = "This is the best sponge EVER!";
+        managerControllerScript.popupWindowOpen = true;
     }
 
     private void CheckForPopups()

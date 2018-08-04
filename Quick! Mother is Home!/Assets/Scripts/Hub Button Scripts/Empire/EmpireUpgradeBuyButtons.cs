@@ -9,6 +9,8 @@ public class EmpireUpgradeBuyButtons : MonoBehaviour {
     public GameObject previewLemonadeStandObject;
     public Sprite lemonadeSpriteStart;
     public Sprite lemonadeSpriteUpdate1;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
 
     private void Start()
@@ -35,6 +37,8 @@ public class EmpireUpgradeBuyButtons : MonoBehaviour {
         {
             if (managerControllerScript.playerSavings >= managerControllerScript.flavorUpgradePrice)
             {
+                soundEffectSource.clip = buttonPushedSound;
+                soundEffectSource.Play();
                 managerControllerScript.playerSavings = managerControllerScript.playerSavings - managerControllerScript.flavorUpgradePrice;
                 managerControllerScript.flavorLemonadeUpgradeCount = managerControllerScript.flavorLemonadeUpgradeCount + 1;
                 managerControllerScript.lemonadeRevenue = managerControllerScript.lemonadeRevenue + (managerControllerScript.flavorLemonadeUpgradeCount * 3);

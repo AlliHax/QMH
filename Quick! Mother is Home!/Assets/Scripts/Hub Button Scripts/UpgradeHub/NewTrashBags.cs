@@ -5,10 +5,13 @@ using UnityEngine;
 public class NewTrashBags : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        soundEffectSource.clip = buttonPushedSound;
     }
 
     void Update()
@@ -18,6 +21,7 @@ public class NewTrashBags : MonoBehaviour {
 
     void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.viewingGarbageUpgradeDescription = true;
         managerControllerScript.descriptionTitle.text = "Nifty Bags";
         managerControllerScript.descriptionPriceText.text = "$200";

@@ -5,10 +5,13 @@ using UnityEngine;
 public class NewBroom : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        soundEffectSource.clip = buttonPushedSound;
     }
 
     private void Update()
@@ -18,6 +21,7 @@ public class NewBroom : MonoBehaviour {
 
     void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.viewingBroomUpgradeDescription = true;
         managerControllerScript.descriptionTitle.text = "Nimbus 1000";
         managerControllerScript.descriptionPriceText.text = "$100";

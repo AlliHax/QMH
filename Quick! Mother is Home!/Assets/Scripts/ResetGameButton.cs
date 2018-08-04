@@ -10,9 +10,13 @@ public class ResetGameButton : MonoBehaviour {
     public GameObject checkExplaination;
     public GameObject checkButton;
     public GameObject xConfirmButton;
+    public GameObject soundEffectSlider;
+    public GameObject soundEffectTitle;
 
     private void OnMouseDown()
     {
+        soundEffectSlider.SetActive(false);
+        soundEffectTitle.SetActive(false);
         slider.SetActive(false);
         optionsTitle.SetActive(false);
         musicVolumeTitle.SetActive(false);

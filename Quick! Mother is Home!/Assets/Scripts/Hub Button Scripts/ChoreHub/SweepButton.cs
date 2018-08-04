@@ -6,10 +6,13 @@ public class SweepButton : MonoBehaviour
 {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        soundEffectSource.clip = buttonPushedSound;
     }
 
     private void Update()
@@ -20,6 +23,7 @@ public class SweepButton : MonoBehaviour
 
     void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.viewingSweepingChoreDescription = true;
         managerControllerScript.choreDescriptionTitle.text = "Sweeping";
         managerControllerScript.choreDescriptionText.text = "Sweep the floor as fast\n as you can before\n the time runs out!";

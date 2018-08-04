@@ -5,6 +5,8 @@ using UnityEngine;
 public class DescriptionBuyButton : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
     // Use this for initialization
     void Start () {
         managerControllerScript = manager.GetComponent<ManagerController>();
@@ -81,6 +83,8 @@ public class DescriptionBuyButton : MonoBehaviour {
                     managerControllerScript.playerSavings = managerControllerScript.playerSavings - 40;
                     managerControllerScript.spongeActivated = true;
                     Debug.Log("New Sponge Added");
+                    soundEffectSource.clip = buttonPushedSound;
+                    soundEffectSource.Play();
                 }
                 else
                 {
@@ -105,6 +109,8 @@ public class DescriptionBuyButton : MonoBehaviour {
                     managerControllerScript.playerSavings = managerControllerScript.playerSavings - 100;
                     managerControllerScript.biggerBroomActivated = true;
                     Debug.Log("New Broom Added");
+                    soundEffectSource.clip = buttonPushedSound;
+                    soundEffectSource.Play();
                 }
                 else
                 {
@@ -125,6 +131,8 @@ public class DescriptionBuyButton : MonoBehaviour {
                     managerControllerScript.playerSavings = managerControllerScript.playerSavings - 200;
                     managerControllerScript.betterTrashBagsActivated = true;
                     Debug.Log("Nifty Bags Added");
+                    soundEffectSource.clip = buttonPushedSound;
+                    soundEffectSource.Play();
                 }
                 else
                 {
@@ -165,6 +173,8 @@ public class DescriptionBuyButton : MonoBehaviour {
                     managerControllerScript.playerSavings = managerControllerScript.playerSavings - 150;
                     managerControllerScript.swiftyDusterActivated = true;
                     Debug.Log("Swifty Duster Added");
+                    soundEffectSource.clip = buttonPushedSound;
+                    soundEffectSource.Play();
                 }
                 else
                 {
@@ -186,6 +196,8 @@ public class DescriptionBuyButton : MonoBehaviour {
                     managerControllerScript.choreSlot3UpgradeUnlocked = true;
                     managerControllerScript.noExtraSlotsUnlocked = false;
                     Debug.Log("Chore Slot 3 Added");
+                    soundEffectSource.clip = buttonPushedSound;
+                    soundEffectSource.Play();
                 }
                 else
                 {

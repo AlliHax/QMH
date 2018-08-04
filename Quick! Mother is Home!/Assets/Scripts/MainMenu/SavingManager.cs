@@ -11,6 +11,12 @@ public class SavingManager : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
 
+    public GameObject soundManager;
+    public SoundController soundManagerScript;
+
+    public GameObject soundEffectManager;
+    public SoundEffectsVolumeController soundEffectManagerScript;
+
 	// Use this for initialization
 	void Start () {
         
@@ -27,6 +33,8 @@ public class SavingManager : MonoBehaviour {
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 
         PlayerData data = new PlayerData();
+        data.musicVolume = soundManager.GetComponent<AudioSource>().volume;
+        data.soundEffectVolume = soundEffectManager.GetComponent<AudioSource>().volume;
         data.playerSavings = managerControllerScript.playerSavings;
         data.responsibilityLevel = managerControllerScript.responsibilityLevel;
         data.choreSlot3Unlocked = managerControllerScript.choreSlot3UpgradeUnlocked;
@@ -46,8 +54,6 @@ public class SavingManager : MonoBehaviour {
         data.dustingChoreUnlocked = managerControllerScript.dustingChoreUnlocked;
         data.trashChoreUnlocked = managerControllerScript.trashChoreUnlocked;
         
-
-  
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Game Saved!");
@@ -62,6 +68,9 @@ public class SavingManager : MonoBehaviour {
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
+
+            soundManager.GetComponent<AudioSource>().volume = data.musicVolume;
+            soundEffectManager.GetComponent<AudioSource>().volume = data.soundEffectVolume;
 
             managerControllerScript.notFirstTimeRun = data.notFirstTimeRun;
 
@@ -109,6 +118,9 @@ public class SavingManager : MonoBehaviour {
 [Serializable]
 class PlayerData
 {
+    public float musicVolume;
+    public float soundEffectVolume;
+
     public bool notFirstTimeRun;
     public int playerSavings;
     public int responsibilityLevel;

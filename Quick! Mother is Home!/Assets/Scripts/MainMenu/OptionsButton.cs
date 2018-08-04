@@ -10,6 +10,8 @@ public class OptionsButton : MonoBehaviour {
     public GameObject optionsMenuSoundTitle;
     public GameObject optionsMenuSlider;
     public GameObject resetButton;
+    public GameObject soundEffectSlider;
+    public GameObject soundEffectText;
     private void OnMouseDown()
     {
         OptionsHud.SetActive(true);
@@ -17,6 +19,8 @@ public class OptionsButton : MonoBehaviour {
         optionsMenuSoundTitle.SetActive(true);
         optionsMenuSlider.SetActive(true);
         resetButton.SetActive(true);
+        soundEffectSlider.SetActive(true);
+        soundEffectText.SetActive(true);
         gameObject.GetComponent<Collider2D>().enabled = false;
         StartButton.GetComponent<Collider2D>().enabled = false;
         creditButton.GetComponent<Collider2D>().enabled = false;

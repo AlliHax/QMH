@@ -12,6 +12,8 @@ public class CloseOptionsButton : MonoBehaviour {
     public GameObject optionsMenuSlider;
     public GameObject checkTitle;
     public GameObject checkExplain;
+    public GameObject soundEffectSlider;
+    public GameObject soundEffectTitle;
 
     private void OnMouseDown()
     {
@@ -21,6 +23,8 @@ public class CloseOptionsButton : MonoBehaviour {
         optionsHud.SetActive(false);
         checkTitle.SetActive(false);
         checkExplain.SetActive(false);
+        soundEffectSlider.SetActive(false);
+        soundEffectTitle.SetActive(false);
         optionsButton.GetComponent<Collider2D>().enabled = true;
         StartButton.GetComponent<Collider2D>().enabled = true;
         creditButton.GetComponent<Collider2D>().enabled = true;

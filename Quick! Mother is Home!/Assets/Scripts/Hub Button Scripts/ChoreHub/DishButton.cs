@@ -5,9 +5,12 @@ using UnityEngine;
 public class DishButton : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
     // Use this for initialization
     void Start () {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        soundEffectSource.clip = buttonPushedSound;
     }
 	
 	void Update ()
@@ -17,6 +20,7 @@ public class DishButton : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.viewingDishChoreDescription = true;
         managerControllerScript.choreDescriptionTitle.text = "Dishes";
         managerControllerScript.choreDescriptionText.text = "Click on as many dirty plates\n as you can before the\n time runs out!";

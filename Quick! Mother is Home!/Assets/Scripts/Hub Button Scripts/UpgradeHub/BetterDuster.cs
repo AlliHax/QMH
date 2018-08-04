@@ -5,10 +5,13 @@ using UnityEngine;
 public class BetterDuster : MonoBehaviour {
     public GameObject manager;
     public ManagerController managerControllerScript;
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
 
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
+        soundEffectSource.clip = buttonPushedSound;
     }
     private void Update()
     {
@@ -17,6 +20,7 @@ public class BetterDuster : MonoBehaviour {
 
     void OnMouseDown()
     {
+        soundEffectSource.Play();
         managerControllerScript.showDescriptionWindow = true;
         managerControllerScript.viewingDusterUpgradeDescription = true;
         managerControllerScript.descriptionTitle.text = "Swifty Duster";

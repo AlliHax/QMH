@@ -16,6 +16,8 @@ public class OkayButton : MonoBehaviour {
 
     public Transform cameraLocation;
 
+    public AudioClip buttonPushedSound;
+    public AudioSource soundEffectSource;
     private void Start()
     {
         managerControllerScript = manager.GetComponent<ManagerController>();
@@ -26,6 +28,8 @@ public class OkayButton : MonoBehaviour {
 
     }
     void OnMouseDown () {
+        soundEffectSource.clip = buttonPushedSound;
+        soundEffectSource.Play();
         managerControllerScript.showOverview = false;
         managerControllerScript.groundedWindow.SetActive(false);
         managerControllerScript.groundedTitleText.SetActive(false);
