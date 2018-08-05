@@ -26,7 +26,6 @@ public class SweepMiniGame : MonoBehaviour {
         managerControllerScript = manager.GetComponent<ManagerController>();
         sweepChoreScript = sweepChoreObject.GetComponent<SweepChore>();
         sweepSwipe = 0;
-        soundSource.clip = sweepSound;
     }
 
     private void OnEnable()
@@ -55,13 +54,14 @@ public class SweepMiniGame : MonoBehaviour {
         if (coll.gameObject.tag == "SweepLocation1")
         {
             target1Triggered = true;
-            soundSource.Play();
+            
 
         }
         if (coll.gameObject.tag == "SweepLocation2")
         {
             target2Triggered = true;
-
+            soundSource.clip = sweepSound;
+            soundSource.Play();
         }
     }
 

@@ -10,11 +10,12 @@ public class LevelUpOkayButton : MonoBehaviour {
 
     private void Start()
     {
-        soundEffectSource.clip = buttonPushedSound;
+        
         managerControllerScript = manager.GetComponent<ManagerController>();
     }
 
     void OnMouseDown () {
+        soundEffectSource.clip = buttonPushedSound;
         soundEffectSource.Play();
         managerControllerScript.showLevelUpWindow = false;
         managerControllerScript.leveledUp = false;
